@@ -193,14 +193,9 @@ footer {
 /* ------------------- */
 @media (max-width: 768px) {
 .texto-sobre {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
+  flex-wrap: nowrap;
+ flex direction:row;
+  overflow-x:auto;
 }
 
   .camera-sobre img {
