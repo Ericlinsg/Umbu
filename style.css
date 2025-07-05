@@ -192,7 +192,11 @@ footer {
 /* RESPONSIVIDADE */
 /* ------------------- */
 @media (max-width: 768px) {
-
+.texto-sobre {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+  }
 
   .camera-sobre img {
     width: 100px;
