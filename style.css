@@ -221,7 +221,7 @@ footer {
 
 @media (max-width: 480px) {
   .faixa-preta {
-    padding: 50px 15px;
+    padding: 80px 15px;
   }
 
   .texto-sobre-imagem {
@@ -276,5 +276,11 @@ footer {
   min-width: 30%;
   max-width: 33%;
   margin: 20px;
+}
+.contato a img {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-right: 4px;
 }
 }
