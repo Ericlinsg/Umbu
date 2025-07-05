@@ -225,8 +225,8 @@ footer {
   }
 
   .texto-sobre-imagem {
-    top: 30px;
-    padding: 10px;
+    top: 90px;
+    padding: 30px;
 height: 15%;
   }
 
@@ -235,7 +235,7 @@ height: 15%;
   }
 
   .texto-sobre-imagem p {
-    font-size: 8px;
+    font-size: 5px;
  
   }
 
