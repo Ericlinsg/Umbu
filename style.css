@@ -193,7 +193,7 @@ footer {
 /* ------------------- */
 @media (max-width: 768px) {
   .texto-sobre {
-    flex-direction: column;
+    flex-direction: flex;
     gap: 30px;
     padding: 20px;
   }
