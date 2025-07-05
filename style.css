@@ -1,0 +1,286 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  color: #000;
+}
+
+/* Logo */
+header {
+  text-align: center;
+  padding: 0;
+  background-color: #f0f0f0;
+  line-height: 0;
+}
+
+.logo {
+  width: 180px;
+  height: auto;
+}
+
+/* Banner */
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Sobre */
+.sobre {
+  position: relative;
+}
+
+.faixa-preta {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.texto-sobre {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.quem-somos, .contato {
+  flex: 1 1 300px;
+  max-width: 500px;
+  position: relative;
+  z-index: 2;
+}
+
+.quem-somos h2,
+.contato h2,
+.quem-somos p,
+.contato p,
+.contato a {
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.contato a {
+  display: inline-block;
+  margin: 5px;
+  color: white;
+  text-decoration: underline;
+}
+
+/* Ícones */
+.contato a img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Câmera */
+.camera-sobre {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  opacity: 0.8;
+}
+
+.camera-sobre img {
+  width: 400px;
+  height: auto;
+}
+
+/* Categorias */
+.categorias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+}
+
+.categoria {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.categoria img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.texto-sobre-imagem {
+  position: absolute;
+  top: 450px;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  z-index: 2;
+}
+
+.texto-sobre-imagem h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.texto-sobre-imagem p {
+  font-size: 14px;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.valores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.valor-caixa {
+  background-color: #444;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  min-width: 220px;
+}
+
+/* Faixa Final */
+.faixa-final {
+  background-color: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+}
+
+/* ------------------- */
+/* RESPONSIVIDADE */
+/* ------------------- */
+@media (max-width: 768px) {
+.texto-sobre {
+  flex-wrap: nowrap;
+ flex direction:row;
+  overflow-x:auto;
+}
+
+  .camera-sobre img {
+    width: 180px;
+  }
+
+  .valor-caixa {
+    min-width: 100%;
+  }
+
+  .texto-sobre-imagem h3 {
+    font-size: 8px;
+  }
+
+  .texto-sobre-imagem p {
+    font-size: 13px;
+  }
+
+  .logo {
+    width: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faixa-preta {
+    padding: 80px 15px;
+  }
+
+  .texto-sobre-imagem {
+    top: 130px;
+    padding: 72px;
+    height: 5%;
+    text-align: center;
+  }
+
+  .texto-sobre-imagem h3 {
+    font-size: 10px;
+  }
+
+  .texto-sobre-imagem p {
+    font-size: 8px;
+ 
+  }
+
+  .valor-caixa {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+@media (max-width: 600px) {
+  /* Reduz os títulos */
+  .quem-somos h2,
+  .contato h2,
+  .texto-sobre-imagem h3,
+  footer h3 {
+    font-size: 9px;
+  }
+
+  /* Reduz os parágrafos */
+  .quem-somos p,
+  .contato p,
+  .texto-sobre-imagem p,
+  .valor-caixa {
+    font-size: 7px;
+  }
+
+  /* Ajusta o padding para ocupar menos espaço vertical */
+  .faixa-preta {
+    padding: 10px 0px;
+  }
+
+  /* Ajusta os botões de contato */
+  .contato a {
+    font-size: 12px;
+  }
+  .categoria {
+  flex: 1 1 30%;
+  min-width: 30%;
+  max-width: 33%;
+  margin: 0px;
+}
+.contato a img {
+  width: 7px;
+  height: 7px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+}
