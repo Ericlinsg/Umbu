@@ -270,4 +270,10 @@ height: 15%;
   .contato a {
     font-size: 8px;
   }
+  .categoria {
+  flex: 1 1 30%;
+  min-width: 30%;
+  max-width: 33%;
+  margin: 5px;
+}
 }
