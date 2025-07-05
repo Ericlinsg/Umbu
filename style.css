@@ -7,14 +7,14 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #000000;
+  background-color: #fff;
   color: #000;
 }
 
 /* Logo */
 header {
   text-align: center;
-  padding: 0px;
+  padding: 0;
   background-color: #f0f0f0;
   line-height: 0;
 }
@@ -24,20 +24,20 @@ header {
   height: auto;
 }
 
-/* Banner com imagem da árvore */
+/* Banner */
 .banner img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* Seção Sobre com faixa preta */
+/* Sobre */
 .sobre {
   position: relative;
 }
 
 .faixa-preta {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 60px 20px;
   position: relative;
@@ -46,11 +46,9 @@ header {
 
 .texto-sobre {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
-  gap: 180px;
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -58,7 +56,7 @@ header {
 }
 
 .quem-somos, .contato {
-  flex: 1 1 400px;
+  flex: 1 1 300px;
   max-width: 500px;
   position: relative;
   z-index: 2;
@@ -82,35 +80,26 @@ header {
   text-decoration: underline;
 }
 
-/* Ícones do Instagram e WhatsApp */
+/* Ícones */
 .contato a img {
   width: 20px;
   height: 20px;
   vertical-align: middle;
   margin-right: 5px;
 }
-.faixa-preta-tras {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0,1);
-  z-index: -1; /* Fica atrás da câmera */
-}
 
-/* Imagem da câmera posicionada atrás */
+/* Câmera */
 .camera-sobre {
   position: absolute;
   top: 0px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 0;
-  opacity: 1;
+  opacity: 0.8;
 }
 
 .camera-sobre img {
-  width: 405px;
+  width: 400px;
   height: auto;
 }
 
@@ -119,17 +108,17 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0px 0;
+  margin: 0;
 }
 
 .categoria {
   position: relative;
-  flex: 1 1 33.33%;
-  max-width: 33.33%;
-  min-width: 280px;
-  box-sizing: border-box;
-  padding: 0px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0;
+  overflow: hidden;
 }
+
 .categoria img {
   width: 100%;
   display: block;
@@ -138,12 +127,12 @@ header {
 
 .texto-sobre-imagem {
   position: absolute;
-  top: 450px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 15%;
+  height: 100%;
   color: white;
-  background: rgba(0, 0, 0, 0.50);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -166,7 +155,7 @@ header {
 
 /* Footer */
 footer {
-  background-color: #000000;
+  background-color: #222;
   color: #fff;
   text-align: center;
   padding: 40px 20px;
@@ -197,4 +186,58 @@ footer {
   text-align: center;
   padding: 10px;
   font-size: 13px;
+}
+
+/* ------------------- */
+/* RESPONSIVIDADE */
+/* ------------------- */
+@media (max-width: 768px) {
+  .texto-sobre {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .camera-sobre img {
+    width: 250px;
+  }
+
+  .valor-caixa {
+    min-width: 100%;
+  }
+
+  .texto-sobre-imagem h3 {
+    font-size: 18px;
+  }
+
+  .texto-sobre-imagem p {
+    font-size: 13px;
+  }
+
+  .logo {
+    width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faixa-preta {
+    padding: 30px 15px;
+  }
+
+  .texto-sobre-imagem {
+    padding: 10px;
+  }
+
+  .texto-sobre-imagem h3 {
+    font-size: 16px;
+  }
+
+  .texto-sobre-imagem p {
+    font-size: 12px;
+  }
+
+  .valor-caixa {
+    font-size: 13px;
+    padding: 10px;
+  }
 }
