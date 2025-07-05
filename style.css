@@ -244,3 +244,30 @@ height: 15%;
     padding: 10px;
   }
 }
+@media (max-width: 600px) {
+  /* Reduz os títulos */
+  .quem-somos h2,
+  .contato h2,
+  .texto-sobre-imagem h3,
+  footer h3 {
+    font-size: 18px;
+  }
+
+  /* Reduz os parágrafos */
+  .quem-somos p,
+  .contato p,
+  .texto-sobre-imagem p,
+  .valor-caixa {
+    font-size: 13px;
+  }
+
+  /* Ajusta o padding para ocupar menos espaço vertical */
+  .faixa-preta {
+    padding: 30px 10px;
+  }
+
+  /* Ajusta os botões de contato */
+  .contato a {
+    font-size: 14px;
+  }
+}
