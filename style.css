@@ -264,7 +264,7 @@ footer {
 
   /* Ajusta o padding para ocupar menos espaço vertical */
   .faixa-preta {
-    padding: 10px 0px;
+    padding: 20px 0px;
   }
 
   /* Ajusta os botões de contato */
@@ -275,6 +275,6 @@ footer {
   flex: 1 1 30%;
   min-width: 30%;
   max-width: 33%;
-  margin: 5px;
+  margin: 20px;
 }
 }
