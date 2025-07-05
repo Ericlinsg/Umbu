@@ -221,7 +221,7 @@ footer {
 
 @media (max-width: 480px) {
   .faixa-preta {
-    padding: 30px 15px;
+    padding: 50px 15px;
   }
 
   .texto-sobre-imagem {
@@ -264,7 +264,7 @@ footer {
 
   /* Ajusta o padding para ocupar menos espaço vertical */
   .faixa-preta {
-    padding: 10px 10px;
+    padding: 10px 0px;
   }
 
   /* Ajusta os botões de contato */
