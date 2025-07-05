@@ -226,6 +226,7 @@ footer {
 
   .texto-sobre-imagem {
     padding: 10px;
+height: 15%;
   }
 
   .texto-sobre-imagem h3 {
@@ -234,7 +235,7 @@ footer {
 
   .texto-sobre-imagem p {
     font-size: 12px;
- height: 15%;
+ 
   }
 
   .valor-caixa {
