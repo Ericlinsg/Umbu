@@ -250,7 +250,7 @@ height: 15%;
   .contato h2,
   .texto-sobre-imagem h3,
   footer h3 {
-    font-size: 18px;
+    font-size: 10px;
   }
 
   /* Reduz os parágrafos */
@@ -258,7 +258,7 @@ height: 15%;
   .contato p,
   .texto-sobre-imagem p,
   .valor-caixa {
-    font-size: 13px;
+    font-size: 8px;
   }
 
   /* Ajusta o padding para ocupar menos espaço vertical */
@@ -268,6 +268,6 @@ height: 15%;
 
   /* Ajusta os botões de contato */
   .contato a {
-    font-size: 14px;
+    font-size: 10px;
   }
 }
