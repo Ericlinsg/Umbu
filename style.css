@@ -221,7 +221,7 @@ footer {
 
 @media (max-width: 480px) {
   .faixa-preta {
-    padding: 80px 15px;
+    padding: 0px 15px;
   }
 
   .texto-sobre-imagem {
@@ -242,7 +242,7 @@ footer {
 
   .valor-caixa {
     font-size: 13px;
-    padding: 10px;
+    padding: 40px;
   }
 }
 @media (max-width: 600px) {
