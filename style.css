@@ -193,13 +193,18 @@ footer {
 /* ------------------- */
 @media (max-width: 768px) {
 .texto-sobre {
-    flex-direction: column;
-    gap: 30px;
-    padding: 20px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
 
   .camera-sobre img {
-    width: 100px;
+    width: 180px;
   }
 
   .valor-caixa {
