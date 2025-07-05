@@ -226,9 +226,9 @@ footer {
 
   .texto-sobre-imagem {
     top: 130px;
-    padding: 80px;
+    padding: 65px;
     height: 5%;
-    text-align: left;
+    text-align: center;
   }
 
   .texto-sobre-imagem h3 {
@@ -264,7 +264,7 @@ footer {
 
   /* Ajusta o padding para ocupar menos espaço vertical */
   .faixa-preta {
-    padding: 10px 0px;
+    padding: 0px 0px;
   }
 
   /* Ajusta os botões de contato */
