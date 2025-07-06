@@ -302,17 +302,15 @@ footer {
   .valor-caixa {
     font-size: 11px;
     padding: 2px;
-  }
 }
 
 @media (max-width: 480px) {
   .texto-sobre-imagem {
     top: 120px;
-    padding: 72px;
+    padding: 21px;
     height: 5%;
     text-align: center;
-    padding: 20px;
-
+   
   }
 
   .texto-sobre-imagem h3 {
