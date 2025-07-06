@@ -48,20 +48,21 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 400px;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  overflow:visible;
 }
 
-.quem-somos, .contato {
+.quem-somos,
+.contato {
   flex: 1 1 300px;
-  max-width: 500px;
+  max-width: 1200px;
   position: relative;
   z-index: 2;
 }
-
 .quem-somos h2,
 .contato h2,
 .quem-somos p,
@@ -71,6 +72,16 @@ header {
   text-align: center;
   position: relative;
   z-index: 2;
+}
+.link-quem-somos {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link-quem-somos:hover {
+  color: #ddd;
+  text-decoration: underline;
 }
 
 .contato a {
@@ -164,7 +175,7 @@ footer {
 .valores {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
   justify-content: center;
   margin: 20px 0;
 }
@@ -192,11 +203,11 @@ footer {
 /* RESPONSIVIDADE */
 /* ------------------- */
 @media (max-width: 768px) {
-.texto-sobre {
-  flex-wrap: nowrap;
- flex direction:row;
-  overflow-x:auto;
-}
+  .texto-sobre {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    overflow: visible;
+  }
 
   .camera-sobre img {
     width: 180px;
@@ -219,68 +230,96 @@ footer {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+  /* Ajusta padding da faixa-preta para não empurrar demais */
   .faixa-preta {
-    padding: 80px 15px;
+    padding: 5px;
+    overflow:visible;
+  }
+/*ajusta o bloco QUEM SOMOS*/
+.texto-sobre {
+  gap: 40px;
+ }
+
+.quem-somos,
+.contato {
+  max-width: 500px;
   }
 
-  .texto-sobre-imagem {
-    top: 130px;
-    padding: 72px;
-    height: 5%;
-    text-align: center;
+  /* Puxa o bloco QUEM SOMOS para cima */
+  .quem-somos {
+    margin-top: 20px;
+    z-index: 5;
+    position: relative;
+    padding: 5px;
+
   }
 
-  .texto-sobre-imagem h3 {
+  .quem-somos h2 {
+    font-size: 15px;
+  }
+
+  .contato h2 {
     font-size: 10px;
   }
 
-  .texto-sobre-imagem p {
+  .quem-somos p,
+  .contato p {
     font-size: 8px;
- 
   }
 
-  .valor-caixa {
-    font-size: 13px;
-    padding: 10px;
+  .contato a {
+    font-size: 10px;
   }
-}
-@media (max-width: 600px) {
-  /* Reduz os títulos */
-  .quem-somos h2,
-  .contato h2,
-  .texto-sobre-imagem h3,
-  footer h3 {
+
+  .contato a img {
+    width: 12px;
+    height: 12px;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+
+  .texto-sobre-imagem h3 {
     font-size: 9px;
   }
 
-  /* Reduz os parágrafos */
-  .quem-somos p,
-  .contato p,
-  .texto-sobre-imagem p,
-  .valor-caixa {
+  .texto-sobre-imagem p {
     font-size: 7px;
   }
 
-  /* Ajusta o padding para ocupar menos espaço vertical */
-  .faixa-preta {
-    padding: 10px 0px;
+  .categoria {
+    flex: 1 1 30%;
+    min-width: 30%;
+    max-width: 33%;
+    margin: 0;
   }
 
-  /* Ajusta os botões de contato */
-  .contato a {
-    font-size: 12px;
+  .camera-sobre img {
+    width: 180px;
+    margin-top: 20px;
   }
-  .categoria {
-  flex: 1 1 30%;
-  min-width: 30%;
-  max-width: 33%;
-  margin: 0px;
+
+  .valor-caixa {
+    font-size: 11px;
+    padding: 2px;
+  }
 }
-.contato a img {
-  width: 10px;
-  height: 10px;
-  vertical-align: middle;
-  margin-right: 4px;
-}
+
+@media (max-width: 480px) {
+  .texto-sobre-imagem {
+    top: 120px;
+    padding: 72px;
+    height: 5%;
+    text-align: center;
+    padding: 20px;
+
+  }
+
+  .texto-sobre-imagem h3 {
+    font-size: 11px;
+  }
+
+  .texto-sobre-imagem p {
+    font-size: 1px;
+  }
 }

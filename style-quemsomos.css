@@ -1,0 +1,109 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Header */
+header {
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 10px 0;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+}
+
+/* Conteúdo principal */
+main {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+}
+
+main p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+/* Títulos de seção */
+section h2 {
+  font-size: 22px;
+  margin: 30px 0 10px;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Contatos na parte inferior */
+.contato {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contato h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.contato a {
+  display: inline-block;
+  margin: 5px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.contato a img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  main {
+    padding: 20px 15px;
+  }
+
+  main h1 {
+    font-size: 24px;
+  }
+
+  main p {
+    font-size: 14px;
+  }
+
+  .contato h2 {
+    font-size: 18px;
+  }
+
+  .contato a {
+    font-size: 13px;
+  }
+
+  .logo {
+    width: 90px;
+  }
+}
