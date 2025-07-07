@@ -1,0 +1,140 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+}
+
+/* Introdução */
+.intro {
+  text-align: center;
+  padding: 30px 20px 20px;
+}
+
+.intro h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.intro p {
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Imagens */
+.imagens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.imagem-bloco {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.imagem-bloco img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+footer h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.contato a {
+  display: inline-block;
+  margin: 8px 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.contato a img {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.faixa-final {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 20px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .intro h1 {
+    font-size: 22px;
+  }
+
+  .intro p {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .imagem-bloco {
+    flex: 1 1 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 90px;
+  }
+
+  .intro h1 {
+    font-size: 20px;
+  }
+
+  .intro p {
+    font-size: 13px;
+  }
+
+  footer h3 {
+    font-size: 16px;
+  }
+
+  .contato a {
+    font-size: 12px;
+  }
+
+  .contato a img {
+    width: 16px;
+    height: 16px;
+  }
+}
