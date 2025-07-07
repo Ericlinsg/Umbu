@@ -128,12 +128,14 @@ header {
   max-width: 400px;
   margin: 0;
   overflow: hidden;
+
 }
 
 .categoria img {
   width: 100%;
   display: block;
   height: auto;
+
 }
 
 .texto-sobre-imagem {
@@ -296,7 +298,7 @@ footer {
 
   .camera-sobre img {
     width: 180px;
-    margin-top: 20px;
+    margin-top: 0px;
   }
 
   .valor-caixa {
