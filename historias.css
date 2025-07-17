@@ -8,19 +8,20 @@
 /* Corpo */
 body {
   font-family: Arial, sans-serif;
-  background-color: #fff;
-  color: #333;
+  background-color: #000000;
+  color: #000;
 }
 
-/* Header */
+/* Logo */
 header {
-  background-color: #f0f0f0;
   text-align: center;
-  padding: 20px 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  line-height: 0;
 }
 
 .logo {
-  width: 140px;
+  width: 180px;
   height: auto;
 }
 
