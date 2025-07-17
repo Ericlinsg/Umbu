@@ -296,11 +296,6 @@ footer {
   gap: 40px;
  }
 
-.quem-somos,
-.contato {
-  max-width: 500px;
-  }
-
   /* Puxa o bloco QUEM SOMOS para cima */
   .quem-somos {
     margin-top: 20px;
