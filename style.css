@@ -711,9 +711,9 @@ body {
  /* Botões de navegação já estão ocultos em 768px, mantêm-se ocultos aqui */
 
     :root {
-        --card-base-width: 90px;
-        --card-base-height: 135px;
-        --card-spacing: 7px;
+        --card-base-width: 108px;
+        --card-base-height: 156px;
+        --card-spacing: 10px;
         --card-scale-hover: 1.00;
         --overlay-scale-hover: 1.05;
         --card-translateY-hover: -1px;
@@ -1094,18 +1094,20 @@ body {
     }
 
     .footer {
-        margin-top: -100px;
-        padding-bottom: 100px;
+        margin-top: -10px;
+        padding-bottom: 110px;
     }
 
     .social-media {
         margin-bottom: 2px;
+padding-bottom: 50px;
+
     }
 
     .social-media img {
-        width: 18px;
-        height: 18px;
-        margin: 0 2px;
+        width: 36px;
+        height: 36px;
+        margin: 0 4px;
     }
 
     .email, .copyright {
