@@ -710,8 +710,8 @@ body {
  /* Botões de navegação já estão ocultos em 768px, mantêm-se ocultos aqui */
 
     :root {
-        --card-base-width: 119px;
-        --card-base-height: 171px;
+        --card-base-width: 108px;
+        --card-base-height: 156px;
         --card-spacing: 10px;
         --card-scale-hover: 1.00;
         --overlay-scale-hover: 1.05;
@@ -1094,11 +1094,11 @@ body {
 
     .footer {
         margin-top: -10px;
-        padding-bottom: 110px;
+        padding-bottom: 100px;
     }
 
     .social-media {
-        margin-bottom: 2px;
+        margin-top: 10px;
 padding-bottom: -20px;
 
     }
@@ -1111,7 +1111,7 @@ padding-bottom: -20px;
 
     .email, .copyright {
         font-size: 0.75em;
-padding-bottom:10px;
+padding-bottom:5px;
     }
 .email{
 color: black;
