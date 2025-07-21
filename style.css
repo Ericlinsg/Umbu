@@ -581,7 +581,6 @@ body {
     font-size: 1.2em;
     margin-bottom: 5px;
     color: var(--text-color-light);
-    text-shadow: 1px 1px 3px var(--shadow-color);
 }
 
 .copyright {
@@ -711,8 +710,8 @@ body {
  /* Botões de navegação já estão ocultos em 768px, mantêm-se ocultos aqui */
 
     :root {
-        --card-base-width: 108px;
-        --card-base-height: 156px;
+        --card-base-width: 119px;
+        --card-base-height: 171px;
         --card-spacing: 10px;
         --card-scale-hover: 1.00;
         --overlay-scale-hover: 1.05;
@@ -1111,7 +1110,7 @@ padding-bottom: -20px;
     }
 
     .email, .copyright {
-        font-size: 0.5em;
+        font-size: 0.75em;
 padding-bottom:10px;
     }
 .email{
