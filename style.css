@@ -997,7 +997,7 @@ body {
     }
 
     .header .slogan {
-        font-size: 1.2em;
+        font-size: 2em;
         margin: 1px 0;
     }
 
@@ -1018,7 +1018,7 @@ body {
     }
 
     .carousel-container {
-        padding: 20px;
+        padding: 30px;
     }
 
     .carousel-button {
@@ -1040,3 +1040,15 @@ body {
         padding: 0;
         gap: var(--card-spacing);
         transition: none
+}
+.footer {
+    text-align: center;
+    margin-top: -10px;
+    padding-bottom: 40px;
+    z-index: 10;
+    width: 100%;
+}
+
+.social-media {
+    margin-bottom: 10px;
+}
