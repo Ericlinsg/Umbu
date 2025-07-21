@@ -1041,10 +1041,15 @@ body {
         gap: var(--card-spacing);
         transition: none
 }
+.carousel-card:hover {
+     transform: translateY(var(--card-translateY-hover)) scale(var(--card-scale-hover));
+    box-shadow: 0 0px 0px 0px var(--card-shadow-hover);
+    z-index: 1; /* Garante que o card fique na frente no hover */
+}
 .footer {
     text-align: center;
-    margin-top: -10px;
-    padding-bottom: 40px;
+    margin-top: -50px;
+    padding-bottom: 60px;
     z-index: 10;
     width: 100%;
 }
