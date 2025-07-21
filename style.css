@@ -708,6 +708,23 @@ body {
 }
 
 @media (max-width: 576px) {
+ /* Botões de navegação já estão ocultos em 768px, mantêm-se ocultos aqui */
+
+    :root {
+        --card-base-width: 90px;
+        --card-base-height: 135px;
+        --card-spacing: 7px;
+        --card-scale-hover: 1.00;
+        --overlay-scale-hover: 1.05;
+        --card-translateY-hover: -1px;
+
+        --outline-blur-radius: 8px;
+        --outline-spread-radius: 2px;
+
+        --container-hover-scale: 0.97;
+        --container-hover-translateX: 0px;
+    }
+
     .main-wrapper {
         padding: 3px 0;
     }
@@ -751,23 +768,7 @@ body {
         padding: 0px 0;
     }
 
-    /* Botões de navegação já estão ocultos em 768px, mantêm-se ocultos aqui */
-
-    :root {
-        --card-base-width: 90px;
-        --card-base-height: 130px;
-        --card-spacing: 10px;
-        --card-scale-hover: 1.05;
-        --overlay-scale-hover: 1.2;
-        --card-translateY-hover: -1px;
-
-        --outline-blur-radius: 8px;
-        --outline-spread-radius: 2px;
-
-        --container-hover-scale: 0.97;
-        --container-hover-translateX: 0px;
-    }
-
+   
     .carousel-track-container {
         padding-left: 1%;
         padding-right: 1%;
@@ -979,7 +980,23 @@ body {
 }
 
 @media (max-width: 576px) {
-    /* Essa media query também herdará o background 'arvore.jpeg' da media query de 768px */
+    /* Botões de navegação já estão ocultos em 768px, mantêm-se ocultos aqui */
+
+    :root {
+        --card-base-width: 90px; /* Altere este valor para testar */
+        --card-base-height: 135px; /* Altere este valor para testar */
+        --card-spacing: 7px;
+        --card-scale-hover: 1.00;
+        --overlay-scale-hover: 1.05;
+        --card-translateY-hover: -1px;
+
+        --outline-blur-radius: 8px;
+        --outline-spread-radius: 2px;
+
+        --container-hover-scale: 0.97;
+        --container-hover-translateX: 0px;
+    }
+
     .main-wrapper {
         padding: 3px 0;
     }
@@ -987,8 +1004,8 @@ body {
     .header {
         margin-bottom: 2px;
         margin-top: 10px;
-        flex-direction: column; /* Garante que em telas menores o logo e slogan fiquem centralizados */
-        position: relative; /* Mantém a posição relativa para os links de idioma */
+        flex-direction: column;
+        position: relative;
     }
 
     .header .logo {
@@ -1001,9 +1018,8 @@ body {
         margin: 1px 0;
     }
 
-    /* Links de Idioma em Celular */
     .language-links {
-        top: 5px; /* Ajuste para celulares */
+        top: 5px;
         right: 5px;
         gap: 5px;
     }
@@ -1011,6 +1027,11 @@ body {
     .language-links a {
         font-size: 0.7em;
         padding: 3px 5px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    .language-links a:hover {
+        transform: scale(1.05);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     }
 
     .content-area {
@@ -1039,21 +1060,63 @@ body {
     .carousel-track {
         padding: 0;
         gap: var(--card-spacing);
-        transition: none
-}
-.carousel-card:hover {
-     transform: translateY(var(--card-translateY-hover)) scale(var(--card-scale-hover));
-    box-shadow: 0 0px 0px 0px var(--card-shadow-hover);
-    z-index: 1; /* Garante que o card fique na frente no hover */
-}
-.footer {
-    text-align: center;
-    margin-top: -50px;
-    padding-bottom: 60px;
-    z-index: 10;
-    width: 100%;
-}
+        transition: none;
+        will-change: auto;
+        width: fit-content;
+        flex-wrap: nowrap;
+    }
 
-.social-media {
-    margin-bottom: 10px;
+    .carousel-card {
+        scroll-snap-align: center;
+        /* REMOVA OU COMENTE AS LINHAS ABAIXO */
+        /* min-width: auto; */ /* Esta linha já é o padrão e não é necessária */
+        /* max-width: 100px; */ /* REMOVA esta para que --card-base-width funcione livremente */
+        /* height: 140px; */ /* REMOVA esta para que --card-base-height funcione */
+        /* width: 100%; */ /* REMOVA esta ou use 'min-content' ou 'fit-content' se necessário */
+
+        /* DEIXE APENAS ISSO PARA CONTROLAR COM AS VARIAVEIS: */
+        min-width: var(--card-base-width);
+        height: var(--card-base-height);
+        width: var(--card-base-width); /* Adicione esta linha para garantir que a largura base seja aplicada */
+
+        flex-direction: column;
+        align-items: stretch;
+        overflow: hidden;
+    }
+
+    .card-text-overlay {
+        padding: 2px;
+        font-size: 0.55em;
+        height: auto;
+    }
+    .card-text-overlay p {
+        line-height: 0.9;
+    }
+
+    .footer {
+        margin-top: -100px;
+        padding-bottom: 100px;
+    }
+
+    .social-media {
+        margin-bottom: 2px;
+    }
+
+    .social-media img {
+        width: 18px;
+        height: 18px;
+        margin: 0 2px;
+    }
+
+    .email, .copyright {
+        font-size: 0.5em;
+    }
+
+    /* O hover do card individual já está com transform: none; no seu código. */
+    /* Se você quiser algum efeito de hover em mobile, você precisará redefinir aqui. */
+    .carousel-card:hover {
+        transform: none; /* Mantendo como "none" conforme seu último código */
+        box-shadow: 0 0px 0px 0px var(--card-shadow-hover);
+        z-index: 1;
+    }
 }
