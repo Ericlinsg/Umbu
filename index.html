@@ -1,102 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Umbu.Doc</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMBU.DOC - Aqui contamos histórias.</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header>
-    <div class="header-container">
-      <img src="imagens/logo.png" alt="Umbu.Doc Logo" class="logo" />
-      <div class="idiomas">
+<header class="header">
+    <div class="language-links">
         <a href="index.html">PT</a>
-        <a href="indexes.html">ES</a>
         <a href="indexen.html">EN</a>
-      </div>
+        <a href="indexes.html">ES</a>
     </div>
-  </header>
+    <img src="imagens/logo.png" alt="Logo da Empresa" class="logo">
+    <p class="slogan">Aqui Contamos Histórias</p>
+        </header>
 
-  <section class="banner">
-    <img src="imagens/arvore.jpeg" alt="Árvore Umbu" />
-  </section>
+        <main class="content-area">
+	<div class="carousel-wrapper">
 
-  <section class="sobre">
-    <div class="camera-sobre">
-      <img src="imagens/camera.jpeg" alt="Câmera" />
-    </div>
+            <div class="carousel-container">
+                <button class="carousel-button prev" aria-label="Anterior">&lt;</button>
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <a href="historias.html" class="carousel-card">
+                            <img src="imagens/historia.jpeg" alt="Historias de Vida">
+                            <div class="card-text-overlay"><p>Historias<br>de Vida</p></div>
+                        </a>
+                        <a href="documentarios.html" class="carousel-card active">
+                            <img src="imagens/doc.jpeg" alt="Documentários e Filmes">
+                            <div class="card-text-overlay"><p>Documentários<br>e Filmes</p></div>
+                        </a>
+                        <a href="legados.html" class="carousel-card">
+                            <img src="imagens/legado.jpeg" alt="Legados Institucionais">
+                            <div class="card-text-overlay"><p>Legados<br>Institucionais</p></div>
+                        </a>
+                    </div>
+                </div>
+                <button class="carousel-button next" aria-label="Próximo">&gt;</button>
+            </div>
+        </main>
 
-    <!-- Faixa preta atrás da câmera -->
-    <div class="faixa-preta-tras"></div>
-
-    <div class="faixa-preta">
-      <div class="texto-sobre">
-        <div class="quem-somos">
-          <h2><a href="quemsomosindex.html" class="link-quem-somos">QUEM SOMOS</a></h2>
-        </div>
-
-        <div class="contato">
-          <h2>FALE CONOSCO</h2>
-          <div class="icones-contato">
-            <a href="https://wa.me/5555996839330?text=Olá,%20gostaria%20de%20conversar%20com%20a%20Umbu.Doc!" target="_blank" rel="noopener">
-              <img src="imagens/whatsapp.png" alt="Whatsapp" />
-            </a>
-            <a href="https://www.instagram.com/umbu.doc/" target="_blank" rel="noopener">
-              <img src="imagens/instagram.jpg" alt="Instagram" />
-            </a>
-          </div>
-          <p>
-            <a href="mailto:Umbu.doc@gmail.com">Umbu.doc@gmail.com</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="categorias">
-
-    <a href="documentarios.html" class="categoria">
-      <img src="imagens/doc.jpeg" alt="Documentários e Filmes" />
-      <div class="texto-sobre-imagem">
-        <h3>DOCUMENTÁRIOS E FILMES</h3>
-        <p>Estética sensível e narrativa autêntica para contar histórias reais com profundidade e significado.</p>
-      </div>
-    </a>
-
-    <a href="historias.html" class="categoria">
-      <img src="imagens/vida.jpeg" alt="Histórias de Vida" />
-      <div class="texto-sobre-imagem">
-        <h3>HISTÓRIAS DE VIDA</h3>
-        <p>Registros sinceros com respeito à memória e à trajetória única de cada um.</p>
-      </div>
-    </a>
-
-    <a href="legados.html" class="categoria">
-      <img src="imagens/legado.jpeg" alt="Legados Institucionais" />
-      <div class="texto-sobre-imagem">
-        <h3>LEGADOS INSTITUCIONAIS</h3>
-        <p>Destaque das conquistas, valores e da identidade construída ao longo do tempo.</p>
-      </div>
-    </a>
-
-  </section>
-
-  <footer>
-    <h3>Nossos Valores</h3>
-    <div class="valores">
-      <div class="valor-caixa">Compromisso com as culturas locais</div>
-      <div class="valor-caixa">Respeito às diferenças</div>
-      <div class="valor-caixa">Criatividade e inovação</div>
-      <div class="valor-caixa">Profissionalismo e ética</div>
-      <div class="valor-caixa">Progresso real e responsabilidade</div>
+        <footer class="footer">
+            <div class="social-media">
+                <a href="https://www.instagram.com/SEU_INSTAGRAM" target="_blank" aria-label="Instagram">
+                    <img src="imagens/instagram.jpg" alt="Instagram">
+                </a>
+                <a href="https://wa.me/SEU_NUMERO_WHATSAPP" target="_blank" aria-label="WhatsApp">
+                    <img src="imagens/whatsapp.png" alt="WhatsApp">
+                </a>
+            </div>
+            <p class="email">umbu.doc@gmail.com</p>
+            <p class="copyright">Umbu.doc todos os direitos reservados</p>
+        </footer>
     </div>
 
-    <div class="faixa-final">
-      ©️ 2025 Umbu.Doc – Todos os direitos reservados
-    </div>
-  </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
