@@ -577,12 +577,6 @@ body {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.email {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-    color: var(--text-color-light);
-}
-
 .copyright {
     font-size: 0.9em;
     color: var(--text-color-light);
@@ -807,7 +801,7 @@ body {
         margin: 0 2px;
     }
 
-    .email, .copyright {
+    .copyright {
         font-size: 0.5em;
     }
 }
@@ -866,13 +860,6 @@ body {
 .social-media img:hover {
     transform: scale(1.15);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-.email {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-    color: var(--text-color-light);
-    text-shadow: 1px 1px 3px var(--shadow-color);
 }
 
 .copyright {
@@ -1109,13 +1096,10 @@ padding-bottom: -20px;
         margin: 0 4px;
     }
 
-    .email, .copyright {
+    .copyright {
         font-size: 0.75em;
 padding-bottom:5px;
     }
-.email{
-color: black;
-}
     /* O hover do card individual já está com transform: none; no seu código. */
     /* Se você quiser algum efeito de hover em mobile, você precisará redefinir aqui. */
     .carousel-card:hover {
