@@ -86,7 +86,7 @@ body {
     font-family: 'Dancing Script', cursive; /* Fonte cursiva */
     font-size: 4.0em;
     font-weight: bold;
-    color: #000; /* Cor preta */
+    color: white; /* Cor preta */
     text-shadow: none; /* Sem sombra */
     margin: 0;
 }
