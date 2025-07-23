@@ -168,7 +168,7 @@ body {
 
 .carousel-card {
     background-color: var(--card-bg-color);
-    border-radius: 15px;
+    border-radius: 0px;
     padding: 0;
     text-align: center;
     text-decoration: none;
