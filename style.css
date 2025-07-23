@@ -17,205 +17,6 @@
     --card-base-height: 240px;
     --card-spacing: 40px;
 
-    /* Variáveis para o hover */
-    --card-scale-hover: 1.1; /* Escala do card original (reduzida para dar mais destaque ao overlay) */
-    --overlay-scale-hover: 1.35; /* Escala do overlay ::before (maior que a do card) */
-    --card-translateY-hover: -10px; /* Elevação do card */
-    --card-shadow-hover: rgba(0, 0, 0, 0.6);
-}
-
-/* Reset Básico e Estilos Globais */
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
-/* Fundo da imagem no HTML para ser o padrão (para telas maiores, ex: desktop) */
-html {
-    background: url('imagens/arvoreh2.jpeg') no-repeat center center; /* Fundo padrão para desktop */
-    background-size: cover;
-    background-attachment: scroll;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    min-height: 100vh;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    color: var(--text-color-light);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%;
-}
-
-.main-wrapper {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 40px 0;
-    box-sizing: border-box;
-    overflow: visible;
-    flex-grow: 1;
-}
-
-/* Cabeçalho */
-.header {
-    text-align: center;
-    margin-bottom: 50px;
-    margin-top: 0px;
-    z-index: 10;
-    width: 100%;
-    display: flex; /* Adicionado para alinhar logo e links */
-    flex-direction: column; /* Coloca o logo e links em coluna no layout padrão */
-    align-items: center; /* Centraliza horizontalmente o conteúdo */
-    position: relative; /* Para posicionar os links de idioma */
-
-}
-
-.header .logo {
-    width: 180px;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px auto;
-}
-
-.header .slogan {
-    font-family: 'Dancing Script', cursive; /* Fonte cursiva */
-    font-size: 4.0em;
-    font-weight: bold;
-    color: #ffffff; /* Cor preta */
-    text-shadow: none; /* Sem sombra */
-    margin: 0;
-}
-
-/* Links de Idioma */
-.language-links {
-    position: absolute;
-    top: 20px; /* Ajuste a posição vertical conforme necessário */
-    right: 20px; /* Alinha à direita */
-    display: flex;
-    gap: 10px; /* Espaçamento entre os links */
-    z-index: 11; /* Para garantir que fiquem acima de outros elementos */
-}
-
-.language-links a {
-    text-decoration: none;
-    color: var(--text-color-dark); /* Cor escura para contrastar com o fundo claro */
-    font-weight: bold;
-    font-size: 1em;
-    padding: 5px 8px;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.7); /* Fundo semi-transparente */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.language-links a:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #000;
-    transform: scale(1.1); /* Aumenta o botão em 10% no hover */
-    box-shadow: 0 4px 10px}
-
-/* Área de Conteúdo Principal (para centralizar o carrossel) */
-.content-area {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 0px 0;
-    box-sizing: border-box;
-    z-index: 5;
-}
-
-/* CARROSSEL DE CATEGORIAS */
-.carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    position: relative;
-    padding: 0 50px; /* Padding para desktop/tablet */
-    box-sizing: border-box;
-}
-
-.carousel-button {
-    display: none;
-}
-
-.carousel-track-container {
-    /* No desktop, o width é calculado para exibir 3 cards */
-    width: calc(
-        (var(--card-base-width) * 3) +
-        (var(--card-spacing) * 2)
-    );
-    overflow: visible;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    max-width: 95%;
-}
-
-.carousel-track {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--card-spacing);
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: transform;
-    padding: 0px 0; /* Padding interno do track (ajustado na media query) */
-}
-
-.carousel-card {
-    background-color: var(--card-bg-color);
-    border-radius: 0px;
-    padding: 0;
-    text-align: center;
-    text-decoration: none;
-    color: var(--text-color-dark);
-    box-shadow: 0 10px 10px var(--shadow-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease;
-    min-width: var(--card-base-width);
-    height: var(--card-base-height);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden; /* Mantido como hidden */
-    position: relative;
-    opacity: 1;
-    flex-shrink: 0;
-    cursor: pointer;
-    z-index: 5; /* Z-index normal do card */
-}
-
-.carousel-card:hover {
-     transform: translateY(var(--card-translateY-hover)) scale(var(--card-scale-hover));
-    box-shadow: 0 10px 20px 10px var(--card-shadow-hover);
-    z-index: 10; /* Garante que o card fique na frente no hover */
-}
-
-/* Imagem e Overlay de Texto */
-.carousel-card img {
-    width: 100%;
-    height: 100%;/* Importação de fontes, se necessário. Exemplo com Google Fonts: */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
-/* Importando a fonte Dancing Script para o slogan */
-
-:root {
-    /* Cores */
-    --text-color-light: #f0f0f0;
-    --text-color-dark: #333;
-    --card-bg-color: rgba(255, 255, 255, 0.85);
-    --shadow-color: rgba(0, 0, 0, 0.4);
-    --button-bg-color: rgba(0, 0, 0, 0.6);
-    --button-hover-bg-color: rgba(0, 0, 0, 0.8);
-    --card-text-bg-color: rgba(0, 0, 0, 0.6); /* Cor de fundo para o texto do card */
-
-    /* Medidas para Cards e Carrossel - PADRÃO (para telas maiores, ex: desktop) */
-    --card-base-width: 150px;
-    --card-base-height: 240px;
-    --card-spacing: 40px;
-
     /* Variáveis para o hover do Carrossel */
     --card-scale-hover: 1.1; /* Escala do card original (reduzida para dar mais destaque ao overlay) */
     --overlay-scale-hover: 1.35; /* Escala do overlay ::before (maior que a do card) */
@@ -339,21 +140,56 @@ body {
     flex-grow: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* **MODIFICADO:** Alinha itens ao topo para o vídeo ficar acima inicialmente */
     width: 100%;
     padding: 0px 0;
     box-sizing: border-box;
     z-index: 5;
     position: relative;
-    min-height: 400px; /* Garante altura mínima para centralização */
+    min-height: auto; /* **MODIFICADO:** Permite que a altura se ajuste */
+    margin-top: 20px; /* **MODIFICADO:** Espaço inicial abaixo do vídeo */
+    transition: margin-top 0.5s ease; /* **MODIFICADO:** Transição suave para o movimento do margin-top */
 }
+
+/* SEÇÃO DE VÍDEO - ADICIONADO */
+.video-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0; /* Espaçamento acima e abaixo do vídeo */
+    box-sizing: border-box;
+    order: -1; /* **MODIFICADO:** Garante que a seção de vídeo apareça primeiro visualmente */
+}
+
+.video-container {
+    position: relative;
+    width: 80%; /* Ou o que você preferir para a largura do quadro de vídeo */
+    max-width: 800px; /* Largura máxima para telas grandes */
+    padding-bottom: 45%; /* Para proporção 16:9 (altura é 56.25% da largura, ou 45% se você quiser que o container seja mais "curto" verticalmente, como 45% da largura). Se quiser 16:9 padrão, use 56.25%. */
+    height: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro enquanto o vídeo carrega */
+    border-radius: 15px; /* Bordas arredondadas para o quadro */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Sombra para destacar */
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que o vídeo cubra todo o espaço, cortando as bordas se necessário */
+}
+/* FIM DA SEÇÃO DE VÍDEO ADICIONADA */
+
 
 /* CONTAINER DO CARROSSEL ÚNICO */
 .carousel-container {
     position: relative; /* Mudado de absolute para relative, já que é o único carrossel */
-    top: 50%; /* Mantido para centralização inicial se não houver wrapper flexbox */
-    left: 50%;
-    transform: translate(-50%, calc(-50% + var(--carousel-offset-y))); /* Ajusta a posição */
+    top: auto; /* MODIFICADO: Removido top/left para ser controlado por flexbox/margin-top do content-area */
+    left: auto; /* MODIFICADO */
+    transform: none; /* MODIFICADO: Removido a transformação de centralização absoluta, agora é flexbox */
     z-index: 5;
     display: flex;
     align-items: center;
@@ -540,7 +376,7 @@ body {
     left: 0;
     height: auto;
     opacity: 1;
-    z-index: 12;
+    z-index: 12; /* Acima de todos os overlays */
 }
 
 .card-text-overlay p {
@@ -596,317 +432,6 @@ body {
     /* Esta Media Query define estilos para telas de até 768px de largura (tablets e celulares) */
     .header {
         margin-bottom: 30px;
-        flex-direction: column;
-        position: relative;
-    }
-
-    .header .logo {
-        width: 150px;
-    }
-
-    .header .slogan {
-        font-size: 1.8em; /* Ajuste para tablets */
-
-    }
-
-    /* Links de Idioma em Tablet */
-    .language-links {
-        top: 10px;
-        right: 10px;
-        gap: 8px;
-    }
-
-    .language-links a {
-        font-size: 0.9em;
-        padding: 4px 6px;
-        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); /* Sombra mais suave para mobile */
-    }
-    .language-links a:hover {
-        transform: scale(1.08); /* Levemente menor aumento de escala no hover para tablets */
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-    }
-
-    .content-area {
-        padding: 10px 0;
-    }
-
-    /* Oculta os botões de navegação em telas menores para usar rolagem por toque */
-    .carousel-button {
-        display: none;
-    }
-
-    :root {
-        /* Tamanhos para tablets e celulares maiores */
-        --card-base-width: 120px;
-        --card-base-height: 180px;
-        --card-spacing: 20px;
-        --card-scale-hover: 1.1;
-        --overlay-scale-hover: 1.25;
-        --card-translateY-hover: -5px;
-
-        --outline-blur-radius: 10px;
-        --outline-spread-radius: 3px;
-
-        --container-hover-scale: 0.96;
-        --container-hover-translateX: 0px;
-
-        --carousel-offset-y: 0px; /* Resetar ou ajustar se precisar */
-    }
-
-    .carousel-container {
-        position: relative; /* Mantém relative */
-        top: auto;
-        left: auto;
-        transform: none; /* Remove a transformação de centralização absoluta */
-        padding: 0; /* Remove padding lateral que interfere com a rolagem */
-        max-width: 100%; /* Permite que o container se estenda totalmente */
-    }
-
-    .carousel-track-container {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: scroll; /* Ativa a rolagem horizontal */
-        -webkit-overflow-scrolling: touch; /* Melhora a rolagem em iOS */
-        scroll-snap-type: x mandatory; /* Para um scroll mais suave e que "encaixa" nos cards */
-        justify-content: flex-start; /* Alinha os itens ao início para rolagem */
-        padding-left: 5%; /* Adiciona um espaço no início */
-        padding-right: 5%; /* Adiciona um espaço no final */
-        box-sizing: border-box;
-    }
-
-    .carousel-track {
-        padding: 0;
-        gap: var(--card-spacing);
-        transition: none; /* Desativa a transição do transform do track em mobile se a rolagem for manual */
-        will-change: auto;
-        width: fit-content; /* Permite que o conteúdo determine a largura */
-        flex-wrap: nowrap; /* Impede a quebra de linha dos cards */
-    }
-
-    .carousel-card {
-        scroll-snap-align: center; /* Centraliza o card ao parar a rolagem */
-        min-width: var(--card-base-width);
-        height: var(--card-base-height);
-        width: var(--card-base-width); /* Garante que o card tenha a largura base */
-    }
-
-    /* === MUDANÇA DE FUNDO PARA CELULARES: ARVORE.JPEG === */
-    html {
-        background: url('imagens/arvore.jpeg') no-repeat center center;
-        background-size: cover;
-        background-attachment: scroll;
-    }
-    /* ===================================== */
-}
-
-@media (max-width: 576px) {
- /* Botões de navegação já estão ocultos em 768px, mantêm-se ocultos aqui */
-
-    :root {
-        --card-base-width: 108px;
-        --card-base-height: 156px;
-        --card-spacing: 15px;
-        --card-scale-hover: 1.00;
-        --overlay-scale-hover: 1.05;
-        --card-translateY-hover: -1px;
-
-        --outline-blur-radius: 8px;
-        --outline-spread-radius: 2px;
-
-        --container-hover-scale: 0.97;
-        --container-hover-translateX: 0px;
-    }
-
-    .main-wrapper {
-        padding: 3px 0;
-    }
-
-    .header {
-        margin-bottom: 2px;
-        margin-top: 0;
-        flex-direction: column;
-        position: relative;
-    }
-
-    .header .logo {
-        width: 60px;
-        margin-bottom: 0px;
-    }
-
-    .header .slogan {
-        font-size: 1.2em; /* Ajuste para celulares menores */
-        margin: 1px 0;
-    }
-
-    /* Links de Idioma em Celular */
-    .language-links {
-        top: 5px;
-        right: 5px;
-        gap: 5px;
-    }
-
-    .language-links a {
-        font-size: 0.7em;
-        padding: 3px 5px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra ainda mais sutil para celulares */
-    }
-    .language-links a:hover {
-        transform: scale(1.05); /* Menor aumento de escala no hover para celulares */
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    }
-
-
-    .content-area {
-        padding: 0px 0;
-    }
-
-   
-    .carousel-track-container {
-        padding-left: 1%;
-        padding-right: 1%;
-    }
-
-    .carousel-card {
-        min-width: auto;
-        max-width: 100px;
-        height: 140px;
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .card-text-overlay {
-        padding: 2px;
-        font-size: 0.55em;
-        height: auto;
-    }
-    .card-text-overlay p {
-        line-height: 0.9;
-    }
-
-    .footer {
-        margin-top: 5px;
-        padding-bottom: 2px;
-    }
-
-    .social-media {
-        margin-bottom: 2px;
-    }
-
-    .social-media img {
-        width: 18px;
-        height: 18px;
-        margin: 0 2px;
-    }
-
-    .copyright {
-        font-size: 0.5em;
-    }
-}
-    object-fit: cover;
-    border-radius: 0;
-    margin-bottom: 0;
-    display: block;
-}
-
-.card-text-overlay {
-    width: 100%;
-    padding: 10px;
-    background-color: var(--card-text-bg-color);
-    color: var(--text-color-light);
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: auto;
-    opacity: 1;
-    z-index: 12; /* Acima de todos os overlays */
-}
-
-.card-text-overlay p {
-    font-size: 1.15em;
-    font-weight: bold;
-    margin: 0;
-    line-height: 1.3;
-}
-
-/* Rodapé */
-.footer {
-    text-align: center;
-    margin-top: 40px;
-    padding-bottom: 20px;
-    z-index: 10;
-    width: 100%;
-}
-
-.social-media {
-    margin-bottom: 10px;
-}
-
-.social-media img {
-    width: 45px;
-    height: 45px;
-    margin: 0 12px;
-    border-radius: 50%;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.social-media img:hover {
-    transform: scale(1.15);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-.copyright {
-    font-size: 0.9em;
-    color: var(--text-color-light);
-    text-shadow: 1px 1px 3px var(--shadow-color);
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px 15px;
-    border-radius: 5px;
-    margin-top: 15px;
-}
-.video-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 40px 0; /* Espaçamento acima e abaixo do vídeo */
-    box-sizing: border-box;
-}
-
-.video-container {
-    position: relative;
-    width: 80%; /* Ou o que você preferir para a largura do quadro de vídeo */
-    max-width: 800px; /* Largura máxima para telas grandes */
-    padding-bottom: 45%; /* Para proporção 16:9 (altura é 56.25% da largura, ou 45% se você quiser que o container seja mais "curto" verticalmente, como 45% da largura). Se quiser 16:9 padrão, use 56.25%. */
-    height: 0;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro enquanto o vídeo carrega */
-    border-radius: 15px; /* Bordas arredondadas para o quadro */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Sombra para destacar */
-}
-
-.video-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garante que o vídeo cubra todo o espaço, cortando as bordas se necessário */
-}/* RESPONSIVIDADE */
-@media (max-width: 992px) {
-    /* Sem alterações específicas aqui para o carrossel, mas pode adicionar se precisar */
-}
-
-@media (max-width: 768px) {
-    /* Esta Media Query define estilos para telas de até 768px de largura (tablets e celulares) */
-    .header {
-        margin-bottom: 30px;
         flex-direction: column; /* Garante que em telas menores o logo e slogan fiquem centralizados */
         position: relative; /* Mantém a posição relativa para os links de idioma */
     }
@@ -918,7 +443,8 @@ body {
     .header .slogan {
         font-size: 1.4em;
     }
- .video-section {
+    /* SEÇÃO DE VÍDEO - RESPONSIVIDADE PARA TABLETS */
+    .video-section {
         padding: 20px 0;
     }
     .video-container {
@@ -926,6 +452,7 @@ body {
         padding-bottom: 60%; /* Adapta a proporção para caber melhor em mobile */
         border-radius: 10px;
     }
+    /* FIM DA SEÇÃO DE VÍDEO RESPONSIVIDADE */
 
 
     /* Links de Idioma em Tablet */
@@ -1121,7 +648,7 @@ body {
 
     .social-media {
         margin-top: 0px;
-padding-bottom: 10px;
+        padding-bottom: 10px;
 
     }
 
@@ -1133,7 +660,7 @@ padding-bottom: 10px;
 
     .copyright {
         font-size: 0.75em;
-padding-bottom:5px;
+        padding-bottom:5px;
     }
     /* O hover do card individual já está com transform: none; no seu código. */
     /* Se você quiser algum efeito de hover em mobile, você precisará redefinir aqui. */
@@ -1142,7 +669,8 @@ padding-bottom:5px;
         box-shadow: 0 0px 0px 0px var(--card-shadow-hover);
         z-index: 1;
     }
- .video-section {
+    /* SEÇÃO DE VÍDEO - RESPONSIVIDADE PARA CELULARES */
+    .video-section {
         padding: 15px 0;
     }
     .video-container {
@@ -1150,4 +678,5 @@ padding-bottom:5px;
         padding-bottom: 65%; /* Ainda mais altura para mobile */
         border-radius: 5px;
     }
+    /* FIM DA SEÇÃO DE VÍDEO RESPONSIVIDADE */
 }

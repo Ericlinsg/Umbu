@@ -7,20 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="header">
-    <div class="language-links">
-        <a href="index.html">PT</a>
-        <a href="indexen.html">EN</a>
-        <a href="indexes.html">ES</a>
-    </div>
-    <img src="imagens/logobranco.png" alt="Logo da Empresa" class="logo">
-    <p class="slogan">Aqui Contamos Histórias</p>
-        </header>
+    <header class="header">
+        <div class="language-links">
+            <a href="index.html">PT</a>
+            <a href="indexen.html">EN</a>
+            <a href="indexes.html">ES</a>
+        </div>
+        <img src="imagens/logobranco.png" alt="Logo da Empresa" class="logo">
+        <p class="slogan">Aqui Contamos Histórias</p>
+    </header>
 
-        <main class="content-area">
-	<div class="carousel-wrapper">
+    <section class="video-section">
+        <div class="video-container">
+            <video id="introVideo" autoplay muted playsinline>
+                <source src="imagens/clip1.mp4" type="video/mp4">
+                Seu navegador não suporta a reprodução de vídeo.
+            </video>
+        </div>
+    </section>
 
-            <div class="carousel-container">
+    <main class="content-area">
+        <div class="carousel-wrapper">
+            <div class="carousel-container" id="categoriesCarousel">
                 <button class="carousel-button prev" aria-label="Anterior">&lt;</button>
                 <div class="carousel-track-container">
                     <div class="carousel-track">
@@ -40,27 +48,21 @@
                 </div>
                 <button class="carousel-button next" aria-label="Próximo">&gt;</button>
             </div>
-        </main>
-<section class="video-section">
-    <div class="video-container">
-        <video autoplay loop muted playsinline>
-            <source src="imagens/clip1.mp4" type="video/mp4">
-            Seu navegador não suporta a reprodução de vídeo.
-        </video>
-    </div>
-</section>
-<footer class="footer">
-    <div class="social-media">
-        <a href="https://www.instagram.com/SEU_INSTAGRAM" target="_blank" aria-label="Instagram">
-            <img src="imagens/instagram.jpg" alt="Instagram">
-        </a>
-        <a href="https://wa.me/SEU_NUMERO_WHATSAPP" target="_blank" aria-label="WhatsApp">
-            <img src="imagens/whatsapp.png" alt="WhatsApp">
-        </a>
-    </div>
-    <p class="copyright"><span class="email-address">umbu.doc@gmail.com</span> - Todos os direitos reservados</p>
-</footer>
+        </div>
+    </main>
 
-<script src="script.js"></script>
+    <footer class="footer">
+        <div class="social-media">
+            <a href="https://www.instagram.com/SEU_INSTAGRAM" target="_blank" aria-label="Instagram">
+                <img src="imagens/instagram.jpg" alt="Instagram">
+            </a>
+            <a href="https://wa.me/SEU_NUMERO_WHATSAPP" target="_blank" aria-label="WhatsApp">
+                <img src="imagens/whatsapp.png" alt="WhatsApp">
+            </a>
+        </div>
+        <p class="copyright"><span class="email-address">umbu.doc@gmail.com</span> - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
