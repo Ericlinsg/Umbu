@@ -706,7 +706,7 @@ body {
     :root {
         --card-base-width: 108px;
         --card-base-height: 156px;
-        --card-spacing: 10px;
+        --card-spacing: 15px;
         --card-scale-hover: 1.00;
         --overlay-scale-hover: 1.05;
         --card-translateY-hover: -1px;
@@ -871,8 +871,34 @@ body {
     border-radius: 5px;
     margin-top: 15px;
 }
+.video-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0; /* Espaçamento acima e abaixo do vídeo */
+    box-sizing: border-box;
+}
 
-/* RESPONSIVIDADE */
+.video-container {
+    position: relative;
+    width: 80%; /* Ou o que você preferir para a largura do quadro de vídeo */
+    max-width: 800px; /* Largura máxima para telas grandes */
+    padding-bottom: 45%; /* Para proporção 16:9 (altura é 56.25% da largura, ou 45% se você quiser que o container seja mais "curto" verticalmente, como 45% da largura). Se quiser 16:9 padrão, use 56.25%. */
+    height: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro enquanto o vídeo carrega */
+    border-radius: 15px; /* Bordas arredondadas para o quadro */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Sombra para destacar */
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que o vídeo cubra todo o espaço, cortando as bordas se necessário */
+}/* RESPONSIVIDADE */
 @media (max-width: 992px) {
     /* Sem alterações específicas aqui para o carrossel, mas pode adicionar se precisar */
 }
@@ -892,6 +918,15 @@ body {
     .header .slogan {
         font-size: 1.4em;
     }
+ .video-section {
+        padding: 20px 0;
+    }
+    .video-container {
+        width: 95%; /* Ocupa mais largura em telas menores */
+        padding-bottom: 60%; /* Adapta a proporção para caber melhor em mobile */
+        border-radius: 10px;
+    }
+
 
     /* Links de Idioma em Tablet */
     .language-links {
@@ -1106,5 +1141,13 @@ padding-bottom:5px;
         transform: none; /* Mantendo como "none" conforme seu último código */
         box-shadow: 0 0px 0px 0px var(--card-shadow-hover);
         z-index: 1;
+    }
+ .video-section {
+        padding: 15px 0;
+    }
+    .video-container {
+        width: 98%;
+        padding-bottom: 65%; /* Ainda mais altura para mobile */
+        border-radius: 5px;
     }
 }
