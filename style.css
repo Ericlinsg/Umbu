@@ -59,7 +59,7 @@ body {
     color: var(--text-color-light);
     display: flex;
     justify-content: center;
-    flex-direction: column; /* Garante que os filhos (header, video-section, main, footer) empilhem verticalmente */
+    flex-direction: column; /* Garante que os filhos (header, main, footer) empilhem verticalmente */
     min-height: 100vh;
     width: 100%;
 }
@@ -150,39 +150,6 @@ body {
     transition: margin-top 0.5s ease;
 }
 
-/* SEÇÃO DE VÍDEO */
-.video-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 40px 0; /* Espaçamento acima e abaixo do vídeo */
-    box-sizing: border-box;
-    /* 'order: -1;' REMOVIDO: Isso estava causando o problema de o vídeo não aparecer em mobile. */
-}
-
-.video-container {
-    position: relative;
-    width: 80%; /* Ou o que você preferir para a largura do quadro de vídeo */
-    max-width: 800px; /* Largura máxima para telas grandes */
-    padding-bottom: 45%; /* Para proporção 16:9 (altura é 56.25% da largura, ou 45% se você quiser que o container seja mais "curto" verticalmente). Se quiser 16:9 padrão, use 56.25%. */
-    height: 0;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro enquanto o vídeo carrega */
-    border-radius: 15px; /* Bordas arredondadas para o quadro */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Sombra para destacar */
-}
-
-.video-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garante que o vídeo cubra todo o espaço, cortando as bordas se necessário */
-}
-/* FIM DA SEÇÃO DE VÍDEO */
-
-
 /* CONTAINER DO CARROSSEL ÚNICO */
 .carousel-container {
     position: relative;
@@ -220,16 +187,16 @@ body {
     top: 50%;
     transform: translateY(-50%);
     transition: background-color 0.3s ease, transform 0.2s ease;
-    z-index: 7; /* Acima dos cards mas abaixo do hover do card principal */
+    z-index: 7;
     user-select: none;
 }
 
 .carousel-button.prev {
-    left: 0px; /* Ajuste a distância da borda */
+    left: 0px;
 }
 
 .carousel-button.next {
-    right: 0px; /* Ajuste a distância da borda */
+    right: 0px;
 }
 
 .carousel-button:hover {
@@ -240,7 +207,6 @@ body {
 .carousel-button:active {
     transform: translateY(-50%) scale(0.95);
 }
-
 
 .carousel-track-container {
     width: calc(
@@ -288,24 +254,22 @@ body {
 
 /* ---------------------------------------------------- */
 /* EFEITO QUANDO O MOUSE ESTÁ SOBRE O CONTÊINER DO CARROSSEL */
-/* Afeta TODOS os cards DENTRO desse contêiner, exceto o que está sendo hover individualmente */
 .carousel-container:hover .carousel-card {
     transform: scale(var(--container-hover-scale)) translateX(var(--container-hover-translateX));
 }
 /* ---------------------------------------------------- */
 
-/* EFEITO QUANDO O MOUSE ESTÁ SOBRE UM CARD INDIVIDUAL */
+/* EFEITO QUANDO O MOUSE ESTÁ SOBRE UM CARD INDIVIDUAL (PRECISA TER MAIOR ESPECIFICIDADE) */
 .carousel-card:hover {
     transform: translateY(var(--card-translateY-hover)) scale(var(--card-scale-hover));
     box-shadow: 0 15px 30px var(--card-shadow-spread-hover) var(--card-shadow-hover),
                 0 0 var(--outline-blur-radius) var(--outline-spread-radius) var(--outline-color-end);
     z-index: 10;
-    /* Garante que qualquer opacidade/filtro do hover do container seja desfeito */
     opacity: 1;
     filter: none;
 }
 
-/* Efeito de aproximação nos cards adjacentes e subsequentes */
+/* Efeito de aproximação nos cards adjacentes e subsequentes (PRECISA TER MAIOR ESPECIFICIDADE) */
 .carousel-card:hover + .carousel-card {
     transform: translateX(calc(var(--card-spacing) * -0.2));
     z-index: 9;
@@ -313,14 +277,12 @@ body {
     filter: none;
 }
 
-/* Outros cards SUBSEQUENTES ao card hover (todos os da direita) */
 .carousel-card:hover ~ .carousel-card {
     transform: translateX(calc(var(--card-spacing) * -0.05));
     z-index: 8;
     opacity: 1;
     filter: none;
 }
-
 
 /* Overlay de Efeito no Hover */
 .carousel-card::before {
@@ -330,13 +292,13 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.3); /* Branco semi-transparente */
-    backdrop-filter: blur(5px); /* Efeito de desfoque */
-    opacity: 0; /* Começa invisível */
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 3;
     border-radius: 15px;
-    pointer-events: none; /* Importante para não bloquear interações com o card */
+    pointer-events: none;
 }
 
 .carousel-card:hover::before {
@@ -368,7 +330,7 @@ body {
     left: 0;
     height: auto;
     opacity: 1;
-    z-index: 12; /* Acima de todos os overlays */
+    z-index: 12;
 }
 
 .card-text-overlay p {
@@ -415,11 +377,7 @@ body {
     margin-top: 15px;
 }
 
----
-
-### RESPONSIVIDADE
-
-```css
+/* RESPONSIVIDADE */
 @media (max-width: 992px) {
     /* Sem alterações específicas aqui para o carrossel, mas pode adicionar se precisar */
 }
@@ -439,22 +397,10 @@ body {
     .header .slogan {
         font-size: 1.4em;
     }
-    /* SEÇÃO DE VÍDEO - RESPONSIVIDADE PARA TABLETS */
-    .video-section {
-        padding: 20px 0;
-        /* 'order: -1;' REMOVIDO */
-    }
-    .video-container {
-        width: 95%; /* Ocupa mais largura em telas menores */
-        padding-bottom: 60%; /* Adapta a proporção para caber melhor em mobile */
-        border-radius: 10px;
-    }
-    /* FIM DA SEÇÃO DE VÍDEO RESPONSIVIDADE */
-
 
     /* Links de Idioma em Tablet */
     .language-links {
-        top: 10px; /* Ajuste para tablets */
+        top: 10px;
         right: 10px;
         gap: 8px;
     }
@@ -473,7 +419,7 @@ body {
     }
 
     .carousel-button {
-        display: none; /* Oculta os botões em telas menores, pois o arrasto é preferível */
+        display: none;
     }
 
     :root {
@@ -481,42 +427,41 @@ body {
         --card-base-width: 120px;
         --card-base-height: 180px;
         --card-spacing: 20px;
-        --card-scale-hover: 1.1; /* Escala do card original (reduzida) */
-        --overlay-scale-hover: 1.25; /* Escala do overlay (ajustada para tablets) */
+        --card-scale-hover: 1.1;
+        --overlay-scale-hover: 1.25;
         --card-translateY-hover: -5px;
     }
 
     .carousel-track-container {
         width: 100%;
         max-width: 100%;
-        overflow-x: scroll; /* Ativa a rolagem horizontal */
-        -webkit-overflow-scrolling: touch; /* Melhora a rolagem em iOS */
-        scroll-snap-type: x mandatory; /* Para "grudar" nos cards ao rolar */
-        justify-content: flex-start; /* Alinha os cards ao início para rolagem */
-        padding-left: 5%; /* Espaçamento nas laterais para ver parte do próximo card */
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        justify-content: flex-start;
+        padding-left: 5%;
         padding-right: 5%;
         box-sizing: border-box;
     }
 
-
     .carousel-track {
         padding: 0;
         gap: var(--card-spacing);
-        transition: none; /* Desativa a transição suave do JS para o arrasto nativo */
+        transition: none;
         will-change: auto;
-        width: fit-content; /* Permite que o conteúdo defina a largura */
-        flex-wrap: nowrap; /* Impede que os cards quebrem a linha */
+        width: fit-content;
+        flex-wrap: nowrap;
     }
 
     .carousel-card {
-        scroll-snap-align: center; /* Garante que o card pare centralizado na rolagem */
+        scroll-snap-align: center;
         min-width: var(--card-base-width);
         height: var(--card-base-height);
         width: var(--card-base-width);
     }
 
     /* === MUDANÇA DE FUNDO PARA CELULARES: ARVORE.JPEG === */
-    html { /* Aplicar o background vertical aqui, SEMPRE SOBREPONDO O PADRÃO */
+    html {
         background: url('imagens/arvore.jpeg') no-repeat center center;
         background-size: cover;
         background-attachment: scroll;
@@ -525,13 +470,11 @@ body {
 }
 
 @media (max-width: 576px) {
-    /* Botões de navegação já estão ocultos em 768px, mantêm-se ocultos aqui */
-
     :root {
         --card-base-width: 108px;
         --card-base-height: 156px;
         --card-spacing: 7px;
-        --card-scale-hover: 1.00; /* Reduz escala de hover em mobile */
+        --card-scale-hover: 1.00;
         --overlay-scale-hover: 1.05;
         --card-translateY-hover: -1px;
 
@@ -597,7 +540,7 @@ body {
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         justify-content: flex-start;
-        padding-left: 1%; /* Menos padding lateral para aproveitar mais espaço */
+        padding-left: 1%;
         padding-right: 1%;
         box-sizing: border-box;
     }
@@ -613,7 +556,6 @@ body {
 
     .carousel-card {
         scroll-snap-align: center;
-        /* As variáveis CSS já definem a largura e altura, garantindo consistência */
         min-width: var(--card-base-width);
         height: var(--card-base-height);
         width: var(--card-base-width);
@@ -652,21 +594,9 @@ body {
         font-size: 0.75em;
         padding-bottom:5px;
     }
-    /* O hover do card individual já está com transform: none; no seu código. */
-    /* Se você quiser algum efeito de hover em mobile, você precisará redefinir aqui. */
     .carousel-card:hover {
-        transform: none; /* Mantém "none" para evitar efeitos de hover indesejados em touch */
+        transform: none;
         box-shadow: 0 0px 0px 0px var(--card-shadow-hover);
         z-index: 1;
-    }
-    /* SEÇÃO DE VÍDEO - RESPONSIVIDADE PARA CELULARES */
-    .video-section {
-        padding: 15px 0;
-        /* 'order: -1;' REMOVIDO */
-    }
-    .video-container {
-        width: 98%;
-        padding-bottom: 65%; /* Ainda mais altura para mobile para melhor visualização */
-        border-radius: 5px;
     }
 }
