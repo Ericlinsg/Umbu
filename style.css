@@ -59,7 +59,7 @@ body {
     color: var(--text-color-light);
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: column; /* Garante que os filhos (header, video-section, main, footer) empilhem verticalmente */
     min-height: 100vh;
     width: 100%;
 }
@@ -86,6 +86,7 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
+    /* Remover `order` se existir aqui, ou se tiver sido adicionado em algum outro lugar. */
 }
 
 .header .logo {
@@ -99,7 +100,7 @@ body {
     font-family: 'Dancing Script', cursive;
     font-size: 2.5em; /* Aumentado o tamanho do slogan */
     font-weight: bold;
-    color: #000;
+    color: #ffffff;
     text-shadow: none;
     margin: 0;
 }
@@ -140,25 +141,26 @@ body {
     flex-grow: 1;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* **MODIFICADO:** Alinha itens ao topo para o vídeo ficar acima inicialmente */
+    align-items: flex-start;
     width: 100%;
     padding: 0px 0;
     box-sizing: border-box;
     z-index: 5;
     position: relative;
-    min-height: auto; /* **MODIFICADO:** Permite que a altura se ajuste */
-    margin-top: 20px; /* **MODIFICADO:** Espaço inicial abaixo do vídeo */
-    transition: margin-top 0.5s ease; /* **MODIFICADO:** Transição suave para o movimento do margin-top */
+    min-height: auto;
+    margin-top: 20px; /* Espaço inicial abaixo do vídeo */
+    transition: margin-top 0.5s ease; /* Transição suave para o movimento do margin-top */
 }
 
-/* SEÇÃO DE VÍDEO - ADICIONADO */
+/* SEÇÃO DE VÍDEO - AJUSTES PARA GARANTIR POSIÇÃO */
 .video-section {
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 40px 0; /* Espaçamento acima e abaixo do vídeo */
     box-sizing: border-box;
-    order: -1; /* **MODIFICADO:** Garante que a seção de vídeo apareça primeiro visualmente */
+    /* REMOVIDO: order: -1; */ /* Esta propriedade estava fazendo o vídeo subir */
+    /* REMOVIDO: qualquer 'position: absolute;' ou 'float' se tiver em outro lugar para .video-section */
 }
 
 .video-container {
@@ -181,15 +183,15 @@ body {
     height: 100%;
     object-fit: cover; /* Garante que o vídeo cubra todo o espaço, cortando as bordas se necessário */
 }
-/* FIM DA SEÇÃO DE VÍDEO ADICIONADA */
+/* FIM DA SEÇÃO DE VÍDEO */
 
 
 /* CONTAINER DO CARROSSEL ÚNICO */
 .carousel-container {
     position: relative; /* Mudado de absolute para relative, já que é o único carrossel */
-    top: auto; /* MODIFICADO: Removido top/left para ser controlado por flexbox/margin-top do content-area */
-    left: auto; /* MODIFICADO */
-    transform: none; /* MODIFICADO: Removido a transformação de centralização absoluta, agora é flexbox */
+    top: auto; /* REMOVIDO: top/left para ser controlado por flexbox/margin-top do content-area */
+    left: auto; /* REMOVIDO */
+    transform: none; /* REMOVIDO: a transformação de centralização absoluta, agora é flexbox */
     z-index: 5;
     display: flex;
     align-items: center;
@@ -446,6 +448,7 @@ body {
     /* SEÇÃO DE VÍDEO - RESPONSIVIDADE PARA TABLETS */
     .video-section {
         padding: 20px 0;
+        /* REMOVIDO: order: -1; */ /* Garante que a ordem do HTML seja respeitada */
     }
     .video-container {
         width: 95%; /* Ocupa mais largura em telas menores */
@@ -672,6 +675,7 @@ body {
     /* SEÇÃO DE VÍDEO - RESPONSIVIDADE PARA CELULARES */
     .video-section {
         padding: 15px 0;
+        /* REMOVIDO: order: -1; */ /* Garante que a ordem do HTML seja respeitada */
     }
     .video-container {
         width: 98%;
