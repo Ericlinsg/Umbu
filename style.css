@@ -86,7 +86,6 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
-    /* Remover `order` se existir aqui, ou se tiver sido adicionado em algum outro lugar. */
 }
 
 .header .logo {
@@ -123,17 +122,16 @@ body {
     padding: 5px 8px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.7); /* Fundo semi-transparente */
-    /* Adicionamos 'transform' e 'box-shadow' à transição aqui para animar a escala e a sombra */
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    transform: scale(1); /* Garante que começa na escala normal para a transição */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidade */
+    transform: scale(1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .language-links a:hover {
     background-color: rgba(255, 255, 255, 0.9);
     color: #000;
-    transform: scale(1.1); /* Aumenta o botão em 10% no hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada no hover */
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Área de Conteúdo Principal (para centralizar o carrossel) */
@@ -148,26 +146,25 @@ body {
     z-index: 5;
     position: relative;
     min-height: auto;
-    margin-top: 20px; /* Espaço inicial abaixo do vídeo */
-    transition: margin-top 0.5s ease; /* Transição suave para o movimento do margin-top */
+    margin-top: 20px;
+    transition: margin-top 0.5s ease;
 }
 
-/* SEÇÃO DE VÍDEO - AJUSTES PARA GARANTIR POSIÇÃO */
+/* SEÇÃO DE VÍDEO */
 .video-section {
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 40px 0; /* Espaçamento acima e abaixo do vídeo */
     box-sizing: border-box;
-    /* REMOVIDO: order: -1; */ /* Esta propriedade estava fazendo o vídeo subir */
-    /* REMOVIDO: qualquer 'position: absolute;' ou 'float' se tiver em outro lugar para .video-section */
+    /* 'order: -1;' REMOVIDO: Isso estava causando o problema de o vídeo não aparecer em mobile. */
 }
 
 .video-container {
     position: relative;
     width: 80%; /* Ou o que você preferir para a largura do quadro de vídeo */
     max-width: 800px; /* Largura máxima para telas grandes */
-    padding-bottom: 45%; /* Para proporção 16:9 (altura é 56.25% da largura, ou 45% se você quiser que o container seja mais "curto" verticalmente, como 45% da largura). Se quiser 16:9 padrão, use 56.25%. */
+    padding-bottom: 45%; /* Para proporção 16:9 (altura é 56.25% da largura, ou 45% se você quiser que o container seja mais "curto" verticalmente). Se quiser 16:9 padrão, use 56.25%. */
     height: 0;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro enquanto o vídeo carrega */
@@ -188,10 +185,10 @@ body {
 
 /* CONTAINER DO CARROSSEL ÚNICO */
 .carousel-container {
-    position: relative; /* Mudado de absolute para relative, já que é o único carrossel */
-    top: auto; /* REMOVIDO: top/left para ser controlado por flexbox/margin-top do content-area */
-    left: auto; /* REMOVIDO */
-    transform: none; /* REMOVIDO: a transformação de centralização absoluta, agora é flexbox */
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
     z-index: 5;
     display: flex;
     align-items: center;
@@ -294,13 +291,10 @@ body {
 /* Afeta TODOS os cards DENTRO desse contêiner, exceto o que está sendo hover individualmente */
 .carousel-container:hover .carousel-card {
     transform: scale(var(--container-hover-scale)) translateX(var(--container-hover-translateX));
-    /* Opcional: menor opacidade, blur leve */
-    /* opacity: 0.8; */
-    /* filter: blur(1px); */
 }
 /* ---------------------------------------------------- */
 
-/* EFEITO QUANDO O MOUSE ESTÁ SOBRE UM CARD INDIVIDUAL (PRECISA TER MAIOR ESPECIFICIDADE) */
+/* EFEITO QUANDO O MOUSE ESTÁ SOBRE UM CARD INDIVIDUAL */
 .carousel-card:hover {
     transform: translateY(var(--card-translateY-hover)) scale(var(--card-scale-hover));
     box-shadow: 0 15px 30px var(--card-shadow-spread-hover) var(--card-shadow-hover),
@@ -311,13 +305,10 @@ body {
     filter: none;
 }
 
-/* Efeito de aproximação nos cards adjacentes e subsequentes (PRECISA TER MAIOR ESPECIFICIDADE) */
-
-/* CARD IMEDIATAMENTE SUBSEQUENTE ao card hover (o próximo da direita) */
+/* Efeito de aproximação nos cards adjacentes e subsequentes */
 .carousel-card:hover + .carousel-card {
     transform: translateX(calc(var(--card-spacing) * -0.2));
     z-index: 9;
-    /* Garante que qualquer opacidade/filtro do hover do container seja desfeito */
     opacity: 1;
     filter: none;
 }
@@ -326,7 +317,6 @@ body {
 .carousel-card:hover ~ .carousel-card {
     transform: translateX(calc(var(--card-spacing) * -0.05));
     z-index: 8;
-    /* Garante que qualquer opacidade/filtro do hover do container seja desfeito */
     opacity: 1;
     filter: none;
 }
@@ -425,7 +415,11 @@ body {
     margin-top: 15px;
 }
 
-/* RESPONSIVIDADE */
+---
+
+### RESPONSIVIDADE
+
+```css
 @media (max-width: 992px) {
     /* Sem alterações específicas aqui para o carrossel, mas pode adicionar se precisar */
 }
@@ -434,8 +428,8 @@ body {
     /* Esta Media Query define estilos para telas de até 768px de largura (tablets e celulares) */
     .header {
         margin-bottom: 30px;
-        flex-direction: column; /* Garante que em telas menores o logo e slogan fiquem centralizados */
-        position: relative; /* Mantém a posição relativa para os links de idioma */
+        flex-direction: column;
+        position: relative;
     }
 
     .header .logo {
@@ -448,7 +442,7 @@ body {
     /* SEÇÃO DE VÍDEO - RESPONSIVIDADE PARA TABLETS */
     .video-section {
         padding: 20px 0;
-        /* REMOVIDO: order: -1; */ /* Garante que a ordem do HTML seja respeitada */
+        /* 'order: -1;' REMOVIDO */
     }
     .video-container {
         width: 95%; /* Ocupa mais largura em telas menores */
@@ -479,7 +473,7 @@ body {
     }
 
     .carousel-button {
-        display: none;
+        display: none; /* Oculta os botões em telas menores, pois o arrasto é preferível */
     }
 
     :root {
@@ -495,11 +489,11 @@ body {
     .carousel-track-container {
         width: 100%;
         max-width: 100%;
-        overflow-x: scroll;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        justify-content: flex-start;
-        padding-left: 5%;
+        overflow-x: scroll; /* Ativa a rolagem horizontal */
+        -webkit-overflow-scrolling: touch; /* Melhora a rolagem em iOS */
+        scroll-snap-type: x mandatory; /* Para "grudar" nos cards ao rolar */
+        justify-content: flex-start; /* Alinha os cards ao início para rolagem */
+        padding-left: 5%; /* Espaçamento nas laterais para ver parte do próximo card */
         padding-right: 5%;
         box-sizing: border-box;
     }
@@ -508,14 +502,14 @@ body {
     .carousel-track {
         padding: 0;
         gap: var(--card-spacing);
-        transition: none;
+        transition: none; /* Desativa a transição suave do JS para o arrasto nativo */
         will-change: auto;
-        width: fit-content;
-        flex-wrap: nowrap;
+        width: fit-content; /* Permite que o conteúdo defina a largura */
+        flex-wrap: nowrap; /* Impede que os cards quebrem a linha */
     }
 
     .carousel-card {
-        scroll-snap-align: center;
+        scroll-snap-align: center; /* Garante que o card pare centralizado na rolagem */
         min-width: var(--card-base-width);
         height: var(--card-base-height);
         width: var(--card-base-width);
@@ -534,10 +528,10 @@ body {
     /* Botões de navegação já estão ocultos em 768px, mantêm-se ocultos aqui */
 
     :root {
-        --card-base-width: 108px; /* Altere este valor para testar */
-        --card-base-height: 156px; /* Altere este valor para testar */
+        --card-base-width: 108px;
+        --card-base-height: 156px;
         --card-spacing: 7px;
-        --card-scale-hover: 1.00;
+        --card-scale-hover: 1.00; /* Reduz escala de hover em mobile */
         --overlay-scale-hover: 1.05;
         --card-translateY-hover: -1px;
 
@@ -603,7 +597,7 @@ body {
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         justify-content: flex-start;
-        padding-left: 1%;
+        padding-left: 1%; /* Menos padding lateral para aproveitar mais espaço */
         padding-right: 1%;
         box-sizing: border-box;
     }
@@ -619,17 +613,10 @@ body {
 
     .carousel-card {
         scroll-snap-align: center;
-        /* REMOVA OU COMENTE AS LINHAS ABAIXO */
-        /* min-width: auto; */ /* Esta linha já é o padrão e não é necessária */
-        /* max-width: 100px; */ /* REMOVA esta para que --card-base-width funcione livremente */
-        /* height: 140px; */ /* REMOVA esta para que --card-base-height funcione */
-        /* width: 100%; */ /* REMOVA esta ou use 'min-content' ou 'fit-content' se necessário */
-
-        /* DEIXE APENAS ISSO PARA CONTROLAR COM AS VARIAVEIS: */
+        /* As variáveis CSS já definem a largura e altura, garantindo consistência */
         min-width: var(--card-base-width);
         height: var(--card-base-height);
-        width: var(--card-base-width); /* Adicione esta linha para garantir que a largura base seja aplicada */
-
+        width: var(--card-base-width);
         flex-direction: column;
         align-items: stretch;
         overflow: hidden;
@@ -668,19 +655,18 @@ body {
     /* O hover do card individual já está com transform: none; no seu código. */
     /* Se você quiser algum efeito de hover em mobile, você precisará redefinir aqui. */
     .carousel-card:hover {
-        transform: none; /* Mantendo como "none" conforme seu último código */
+        transform: none; /* Mantém "none" para evitar efeitos de hover indesejados em touch */
         box-shadow: 0 0px 0px 0px var(--card-shadow-hover);
         z-index: 1;
     }
     /* SEÇÃO DE VÍDEO - RESPONSIVIDADE PARA CELULARES */
     .video-section {
         padding: 15px 0;
-        /* REMOVIDO: order: -1; */ /* Garante que a ordem do HTML seja respeitada */
+        /* 'order: -1;' REMOVIDO */
     }
     .video-container {
         width: 98%;
-        padding-bottom: 65%; /* Ainda mais altura para mobile */
+        padding-bottom: 65%; /* Ainda mais altura para mobile para melhor visualização */
         border-radius: 5px;
     }
-    /* FIM DA SEÇÃO DE VÍDEO RESPONSIVIDADE */
 }
