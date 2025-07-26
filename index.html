@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Umbu.doc</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Umbu.Doc</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+    }
+    .canva-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+    iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #f4f4f4; font-family: sans-serif;">
-
-  <div style="position: relative; width: 100%; height: 0; padding-top: 393.5578%;
-   padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
-   border-radius: 8px; will-change: transform;">
-    <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+<body>
+  <div class="canva-container">
+    <iframe 
+      loading="lazy"
       src="https://www.canva.com/design/DAGuPIq7mKI/-DcvD_9d-QOBBqbOaXy2sg/watch?embed"
-      allowfullscreen="allowfullscreen" allow="fullscreen">
+      allowfullscreen>
     </iframe>
   </div>
-
 </body>
 </html>
